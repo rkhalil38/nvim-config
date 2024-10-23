@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>w", vim.cmd.write)
 
 -- Undo Remap
 vim.keymap.set("n", "U", vim.cmd.undo)
+
+-- Markdown Preview
+vim.keymap.set("n", "<leader>mp", vim.cmd.MarkdownPreview)
