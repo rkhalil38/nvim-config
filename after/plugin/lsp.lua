@@ -13,7 +13,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here
   -- with the ones you want to install
-  ensure_installed = {'lua_ls', 'rust_analyzer', 'ts_ls', 'eslint', 'texlab', 'ast_grep', 'jdtls', 'ruff', 'tailwindcss', 'pyright', 'marksman'},
+  ensure_installed = {'lua_ls', 'rust_analyzer', 'ts_ls', 'eslint', 'texlab', 'ast_grep', 'jdtls', 'ruff', 'tailwindcss', 'pyright', 'marksman', "clangd"},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -37,7 +37,8 @@ cmp.setup({
         {name = 'ruff'},
         {name = 'tailwindcss'},
         {name = 'pyright'},
-        {name = 'marksman'}
+        {name = 'marksman'},
+        {name = 'clangd'}
     },
     --- (Optional) Show source name in completion menu
     formatting = cmp_format,
