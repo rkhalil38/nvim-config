@@ -28,7 +28,6 @@ return require('packer').startup(function(use)
         require("toggleterm").setup()
     end}
     use ('theprimeagen/harpoon')
-    use 'm4xshen/autoclose.nvim'
     use { "catppuccin/nvim", as = "catppuccin" }
     use({
         "iamcco/markdown-preview.nvim",
