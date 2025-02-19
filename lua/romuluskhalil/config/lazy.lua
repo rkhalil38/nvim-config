@@ -42,16 +42,27 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim", config = function() end },
     {'hrsh7th/nvim-cmp'},
-    {"lervag/vimtex", lazy = false, init = function() vim.g.vimtex_view_method = "zathura" end},
-    {'akinsho/toggleterm.nvim', version = "*", opts = {}},
-    {'theprimeagen/harpoon'},
-    {"catppuccin/nvim", name = "catppuccin", priority = 1000},
+    -- install markdown-preview.nvim without yarn or npm
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
+        build = function(plugin)
+        if vim.fn.executable "npx" then
+        vim.cmd("!cd " .. plugin.dir .. " && cd app && npx --yes yarn install")
+        else
+        vim.cmd [[Lazy load markdown-preview.nvim]]
+        vim.fn["mkdp#util#install"]()
+        end
+        end,
+        init = function()
+        if vim.fn.executable "npx" then vim.g.mkdp_filetypes = { "markdown" } end
+        end,
     },
+    {"lervag/vimtex", lazy = false, init = function() vim.g.vimtex_view_method = "zathura" end},
+    {'akinsho/toggleterm.nvim', version = "*", opts = {}},
+    {'theprimeagen/harpoon'},
+    {"catppuccin/nvim", name = "catppuccin", priority = 1000},
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
