@@ -28,9 +28,17 @@ require("lazy").setup({
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {'neovim/nvim-lspconfig'},
     {'hrsh7th/cmp-nvim-lsp'},
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim", config = function() end },
     {'hrsh7th/nvim-cmp'},
-    {"williamboman/mason.nvim"},
-    {"lervag/vimtex", lazy = false, init = function() vim.g.vimtex_view_method = "zathura" end}, 
+    {"lervag/vimtex", lazy = false, init = function() vim.g.vimtex_view_method = "zathura" end},
     {'akinsho/toggleterm.nvim', version = "*", opts = {}},
     {'theprimeagen/harpoon'},
     {"catppuccin/nvim", name = "catppuccin", priority = 1000},
@@ -56,5 +64,5 @@ require("lazy").setup({
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true, notify = false},
+  checker = { enabled = true, notify = true},
 })
