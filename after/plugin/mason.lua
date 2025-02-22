@@ -3,6 +3,7 @@ require("mason-lspconfig").setup {
     ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", 'eslint', 'texlab', 'ast_grep', 'jdtls', 'ruff', 'tailwindcss', 'pyright', 'marksman', "clangd"}
 }
 local lspconfig = require('lspconfig')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Rust Setup
 lspconfig.rust_analyzer.setup {
@@ -43,7 +44,8 @@ require'lspconfig'.lua_ls.setup {
   end,
   settings = {
     Lua = {}
-  }
+  },
+  capabilities = capabilities
 }
 
 -- Typescript Setup
@@ -62,6 +64,7 @@ require'lspconfig'.ts_ls.setup{
     "typescript",
     "vue",
   },
+  capabilities = capabilities,
 }
 
 -- Eslint Setup
@@ -73,28 +76,45 @@ lspconfig.eslint.setup({
       command = "EslintFixAll",
     })
   end,
+  capabilities = capabilities
 })
 
 -- Texlab Setup
-require'lspconfig'.texlab.setup{}
+require'lspconfig'.texlab.setup{
+    capabilities = capabilities
+}
 
 -- Astgrep Setup
-require'lspconfig'.ast_grep.setup{}
+require'lspconfig'.ast_grep.setup{
+    capabilities = capabilities
+}
 
 -- Jdtls Setup
-require'lspconfig'.jdtls.setup{}
+require'lspconfig'.jdtls.setup{
+    capabilities = capabilities
+}
 
 -- Ruff Setup
-require'lspconfig'.ruff.setup{}
+require'lspconfig'.ruff.setup{
+    capabilities = capabilities
+}
 
 -- Tailwind CSS
-require'lspconfig'.tailwindcss.setup{}
+require'lspconfig'.tailwindcss.setup{
+    capabilities = capabilities
+}
 
 -- Pyright Setup 
-require'lspconfig'.pyright.setup{}
+require'lspconfig'.pyright.setup{
+    capabilities = capabilities
+}
 
 -- Marksman Setup
-require'lspconfig'.marksman.setup{}
+require'lspconfig'.marksman.setup{
+    capabilities = capabilities
+}
 
 -- Clangd Setup
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.clangd.setup{
+    capabilities = capabilities
+}
