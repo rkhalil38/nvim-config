@@ -17,4 +17,4 @@ vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.statusline = "%<%f %h%m%r%=%-14.(%l,%c%V%) %P %{v:lua.StatusWordCount()} words"
-
+vim.diagnostic.config({ virtual_text = true })
