@@ -1,1 +1,1 @@
-require("romuluskhalil")
+require("romuluskhalil.config")

@@ -1,6 +1,6 @@
 require("romuluskhalil.config.lazy")
-require("romuluskhalil.remap")
-require("romuluskhalil.set")
+require("romuluskhalil.config.remap")
+require("romuluskhalil.config.set")
 
 function StatusWordCount()
     local wc = vim.fn.wordcount()
