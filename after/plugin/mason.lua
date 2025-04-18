@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", 'eslint', 'texlab', 'ast_grep', 'jdtls', 'ruff', 'tailwindcss', 'pyright', 'marksman', "clangd"}
+    ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", 'eslint', 'texlab', 'ast_grep', 'jdtls', 'tailwindcss', 'pyright', 'marksman', "clangd"}
 }
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -13,7 +13,7 @@ lspconfig.rust_analyzer.setup {
 }
 
 -- Lua Setup
-require'lspconfig'.lua_ls.setup {
+lspconfig.lua_ls.setup {
   on_init = function(client)
     if client.workspace_folders then
       local path = client.workspace_folders[1].name
@@ -49,7 +49,7 @@ require'lspconfig'.lua_ls.setup {
 }
 
 -- Typescript Setup
-require'lspconfig'.ts_ls.setup{
+lspconfig.ts_ls.setup{
   init_options = {
     plugins = {
       {
@@ -62,6 +62,8 @@ require'lspconfig'.ts_ls.setup{
   filetypes = {
     "javascript",
     "typescript",
+    "jsx",
+    "tsx",
     "vue",
   },
   capabilities = capabilities,
@@ -80,41 +82,36 @@ lspconfig.eslint.setup({
 })
 
 -- Texlab Setup
-require'lspconfig'.texlab.setup{
+lspconfig.texlab.setup{
     capabilities = capabilities
 }
 
 -- Astgrep Setup
-require'lspconfig'.ast_grep.setup{
+lspconfig.ast_grep.setup{
     capabilities = capabilities
 }
 
 -- Jdtls Setup
-require'lspconfig'.jdtls.setup{
-    capabilities = capabilities
-}
-
--- Ruff Setup
-require'lspconfig'.ruff.setup{
+lspconfig.jdtls.setup{
     capabilities = capabilities
 }
 
 -- Tailwind CSS
-require'lspconfig'.tailwindcss.setup{
-    capabilities = capabilities
-}
-
--- Pyright Setup 
-require'lspconfig'.pyright.setup{
+lspconfig.tailwindcss.setup{
     capabilities = capabilities
 }
 
 -- Marksman Setup
-require'lspconfig'.marksman.setup{
+lspconfig.marksman.setup{
     capabilities = capabilities
 }
 
 -- Clangd Setup
-require'lspconfig'.clangd.setup{
+lspconfig.clangd.setup{
+    capabilities = capabilities
+}
+
+-- Pyright Setup 
+lspconfig.pyright.setup{
     capabilities = capabilities
 }
