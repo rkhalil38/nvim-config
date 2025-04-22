@@ -11,7 +11,12 @@ return {
                     }
                 }
             })
-            vim.cmd.colorscheme("catppuccin")
         end
     },
+    {
+        "rebelot/kanagawa.nvim",
+        opts = function ()
+            vim.cmd("colorscheme kanagawa")
+        end
+    }
 }
