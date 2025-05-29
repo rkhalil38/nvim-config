@@ -10,6 +10,7 @@ return {
             vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end);
             vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end);
             vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end);
-        end
+        end,
+        dependencies = { 'nvim-lua/plenary.nvim' }
     },
 }
