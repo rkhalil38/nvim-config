@@ -13,7 +13,8 @@ return {
                 'tailwindcss',
                 'pyright',
                 'marksman',
-                "clangd"
+                "clangd",
+                "intelephense"
             }
         },
         dependencies = {
