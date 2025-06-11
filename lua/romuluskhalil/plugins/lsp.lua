@@ -14,7 +14,7 @@ return {
                 'pyright',
                 'marksman',
                 "clangd",
-                "intelephense"
+                "phpactor"
             }
         },
         dependencies = {
