@@ -8,7 +8,7 @@ return {
             dap.adapters.php = {
                 type = 'executable',
                 command = 'node',
-                args = { '/path/to/vscode-php-debug/out/phpDebug.js' }
+                args = { '~/.config/nvim/vscode-php-debug/out/phpDebug.js' }
             }
 
             dap.configurations.php = {
