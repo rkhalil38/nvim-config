@@ -8,4 +8,6 @@ This is my nvim config. Nothin special but its mine.
 
 2. Rename folder to "nvim"
 
-3. Start neovim
+3. cd into folder and run `npm install` 
+
+4. Start neovim
