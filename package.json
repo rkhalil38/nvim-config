@@ -1,0 +1,25 @@
+{
+  "name": "nvim",
+  "version": "1.0.0",
+  "description": "This is my nvim config. Nothin special but its mine.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkhalil38/nvim-config.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rkhalil38/nvim-config/issues"
+  },
+  "homepage": "https://github.com/rkhalil38/nvim-config#readme",
+  "dependencies": {
+    "@vue/typescript-plugin": "^2.2.10",
+    "typescript": "^5.8.3"
+  }
+}

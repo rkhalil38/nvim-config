@@ -25,12 +25,13 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function ()
+            local config_dir = vim.fn.stdpath("config");
             vim.lsp.config('ts_ls', {
                 init_options = {
                     plugins = {
                         {
                             name = "@vue/typescript-plugin",
-                            location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+                            location = config_dir .. "/node_modules/@vue/typescript-plugin",
                             languages = {"javascript", "typescript", "vue"},
                         },
                     },
