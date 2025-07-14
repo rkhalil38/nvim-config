@@ -4,11 +4,13 @@ return {
         config = function ()
             local dap = require('dap')
 
+            local config_dir = vim.fn.stdpath("config");
+
             -- php debugger
             dap.adapters.php = {
                 type = 'executable',
                 command = 'node',
-                args = { '/Users/romuluskhalil/.config/nvim/vscode-php-debug/out/phpDebug.js' }
+                args = { config_dir .. '/vscode-php-debug/out/phpDebug.js' }
             }
             dap.configurations.php = {
                 {
