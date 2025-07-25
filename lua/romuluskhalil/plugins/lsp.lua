@@ -14,7 +14,8 @@ return {
                 'pyright',
                 'marksman',
                 "clangd",
-                "phpactor"
+                "phpactor",
+                "ruby_lsp"
             }
         },
         dependencies = {
