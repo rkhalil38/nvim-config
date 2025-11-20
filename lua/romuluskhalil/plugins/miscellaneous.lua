@@ -29,5 +29,12 @@ return {
             }
         end
     },
-    { "lewis6991/gitsigns.nvim" }
+    { "lewis6991/gitsigns.nvim" },
+    {
+        "rcarriga/nvim-notify",
+        opts = function ()
+            require('notify').setup()
+            vim.notify = require('notify')
+        end
+    }
 }

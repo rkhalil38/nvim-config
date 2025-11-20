@@ -26,5 +26,4 @@ require("lazy").setup({
 	spec = {
 		{ import = "romuluskhalil.plugins" }
 	},
-	checker = { enabled = true, notify = false },
 })
