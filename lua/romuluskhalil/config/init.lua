@@ -8,6 +8,9 @@ vim.opt.scrolloff = 5
 -- required by obsidian.nvim
 vim.opt.conceallevel = 1
 
+-- setting colorscheme
+vim.cmd("colorscheme tender")
+
 function StatusWordCount()
     local wc = vim.fn.wordcount()
     if vim.fn.mode() == 'v' or vim.fn.mode() == 'V' or vim.fn.mode() == 'CTRL-V' then
