@@ -71,8 +71,54 @@ return {
                     { name = 'treesitter' },
                     { name = 'path' },
                     { name = 'buffer' },
-                })
+                }),
+                formatting = {
+                    fields = { "kind", "abbr", "menu" },
+                    format = function(entry, vim_item)
+                        -- icons (you can tweak these)
+                        local icons = {
+                            Text = "",
+                            Method = "󰆧",
+                            Function = "󰊕",
+                            Constructor = "",
+                            Field = "󰇽",
+                            Variable = "󰂡",
+                            Class = "󰠱",
+                            Interface = "",
+                            Module = "",
+                            Property = "󰜢",
+                            Unit = "",
+                            Value = "󰎠",
+                            Enum = "",
+                            Keyword = "󰌋",
+                            Snippet = "",
+                            Color = "󰏘",
+                            File = "󰈙",
+                            Reference = "",
+                            Folder = "󰉋",
+                            EnumMember = "",
+                            Constant = "󰏿",
+                            Struct = "󰙅",
+                            Event = "",
+                            Operator = "󰆕",
+                            TypeParameter = "",
+                        }
+
+                        vim_item.kind = (icons[vim_item.kind] or "") .. " " .. vim_item.kind
+
+                        -- source labels
+                        vim_item.menu = ({
+                            nvim_lsp = "[LSP]",
+                            buffer = "[BUF]",
+                            path = "[PATH]",
+                            luasnip = "[SNIP]",
+                        })[entry.source.name]
+
+                        return vim_item
+                    end,
+                },
             }
         end
-    }
+    },
+    'saadparwaiz1/cmp_luasnip'
 }
