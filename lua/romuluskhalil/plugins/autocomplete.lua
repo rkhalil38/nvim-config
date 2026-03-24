@@ -117,6 +117,9 @@ return {
                         return vim_item
                     end,
                 },
+                performance = {
+                    max_view_entries = 10,
+                }
             }
         end
     },
