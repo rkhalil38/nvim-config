@@ -65,8 +65,8 @@ return {
                     end, { "i", "s" }),
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
                     { name = 'luasnip' }, -- For luasnip users.
+                    { name = 'nvim_lsp' },
                     { name = 'codeium' },
                     { name = 'treesitter' },
                     { name = 'path' },

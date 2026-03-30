@@ -10,8 +10,7 @@ return {
     opts = {
         workspaces = {
             {
-                name = "fall_semester_2025",
-                path = "~/FallSemester2025/",
+                -- workspaces here
             },
         },
     },
