@@ -1,4 +1,3 @@
-require("romuluskhalil.config.lazy")
 require("romuluskhalil.config.remap")
 require("romuluskhalil.config.set")
 
@@ -9,7 +8,7 @@ vim.opt.scrolloff = 5
 vim.opt.conceallevel = 1
 
 -- setting colorscheme
-vim.cmd("colorscheme tender")
+vim.cmd.colorscheme("tender")
 
 function StatusWordCount()
     local wc = vim.fn.wordcount()

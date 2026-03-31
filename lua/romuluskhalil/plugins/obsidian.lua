@@ -16,7 +16,6 @@ return {
         },
     },
 }
---]]
 -- Install plugins
 vim.pack.add({
     "https://github.com/epwalsh/obsidian.nvim",
@@ -28,9 +27,10 @@ vim.pack.add({
 -- Obsidian
 --------------------------------------------------
 require("obsidian").setup({
-    workspaces = {
-        {
-            -- workspaces here
-        },
-    },
+	workspaces = {
+	    {
+
+	    },
+	},
 })
+--]]
