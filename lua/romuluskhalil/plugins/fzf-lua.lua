@@ -1,3 +1,4 @@
+--[[
 return {
     {
         "ibhagwan/fzf-lua",
@@ -16,3 +17,22 @@ return {
         end
     }
 }
+--]]
+
+vim.pack.add({
+    "https://github.com/ibhagwan/fzf-lua",
+    "https://github.com/nvim-tree/nvim-web-devicons",
+    -- or use this instead if you prefer:
+    -- "https://github.com/echasnovski/mini.icons",
+})
+
+--------------------------------------------------
+-- fzf-lua
+--------------------------------------------------
+local fzf = require("fzf-lua")
+
+vim.keymap.set("n", "<leaderff", fzf.files)
+vim.keymap.set("n", "<leaderfs", fzf.live_grep)
+vim.keymap.set("n", "<leaderfc", fzf.commands)
+vim.keymap.set("n", "<leadergf", fzf.git_files)
+vim.keymap.set("n", "<leadergb", fzf.git_branches)

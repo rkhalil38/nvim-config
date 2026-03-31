@@ -1,3 +1,4 @@
+--[[
 return {
     {
         'mfussenegger/nvim-dap',
@@ -41,3 +42,49 @@ return {
         end
     }
 }
+--]]
+
+vim.pack.add({
+  "https://github.com/mfussenegger/nvim-dap",
+  "https://github.com/rcarriga/nvim-dap-ui",
+  "https://github.com/nvim-neotest/nvim-nio"
+})
+
+-----------------------------------------------
+-- nvim-dap 
+-----------------------------------------------
+local dap = require('dap')
+local config_dir = vim.fn.stdpath("config");
+
+-- php debugger
+dap.adapters.php = {
+    type = 'executable',
+    command = 'node',
+    args = { config_dir .. '/vscode-php-debug/out/phpDebug.js' }
+}
+
+dap.configurations.php = {
+    {
+        type = 'php',
+        request = 'launch',
+        name = 'Listen for Xdebug',
+        port = 9003,
+        pathMappings = {
+            ['/app'] = "${workspaceFolder}"
+        },
+        log = true
+    }
+}
+
+vim.keymap.set("n", "<leader>bp", dap.toggle_breakpoint)
+vim.keymap.set("n", "<leader>dc", dap.continue)
+vim.keymap.set("n", "<leader>so", dap.step_over)
+vim.keymap.set("n", "<leader>si", dap.step_into)
+
+-----------------------------------------------
+-- nvim-dap-ui 
+-----------------------------------------------
+local dapui = require("dapui")
+dapui.setup()
+
+vim.keymap.set("n", "<leader>dv", dapui.toggle)
