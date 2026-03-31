@@ -10,8 +10,11 @@ vim.pack.add({
 --------------------------------------------------
 local fzf = require("fzf-lua")
 
-vim.keymap.set("n", "<leader>ff", fzf.files)
-vim.keymap.set("n", "<leader>fs", fzf.live_grep)
-vim.keymap.set("n", "<leader>fc", fzf.commands)
-vim.keymap.set("n", "<leader>gf", fzf.git_files)
-vim.keymap.set("n", "<leader>gb", fzf.git_branches)
+-- configure on vim enter since plugin might not be loaded
+vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
+    vim.keymap.set("n", "<leader>ff", fzf.files)
+    vim.keymap.set("n", "<leader>fs", fzf.live_grep)
+    vim.keymap.set("n", "<leader>fc", fzf.commands)
+    vim.keymap.set("n", "<leader>gf", fzf.git_files)
+    vim.keymap.set("n", "<leader>gb", fzf.git_branches)
+end })

@@ -7,4 +7,7 @@ vim.pack.add({
 --------------------------------------------------
 local grug = require("grug-far")
 
-vim.keymap.set("n", "<leader>fr", grug.open)
+-- configure on vim enter since plugin might not be loaded
+vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
+    vim.keymap.set("n", "<leader>fr", grug.open)
+end })
