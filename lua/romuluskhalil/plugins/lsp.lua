@@ -9,6 +9,7 @@ vim.pack.add({
 --------------------------------------------------
 require("mason").setup()
 
+-- automatically installs and calls vim.lsp.enable
 require("mason-lspconfig").setup({
   ensure_installed = {
     "lua_ls",
@@ -24,6 +25,7 @@ require("mason-lspconfig").setup({
     "clangd",
     "phpactor",
     "ruby_lsp",
+    "hyprls"
   },
 })
 
