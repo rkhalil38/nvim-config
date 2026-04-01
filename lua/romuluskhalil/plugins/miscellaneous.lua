@@ -12,6 +12,8 @@ vim.pack.add({
     "https://github.com/MunifTanjim/nui.nvim",
 })
 
+vim.cmd(":packadd nvim.undotree")
+
 --------------------------------------------------
 -- markdown-preview.nvim
 --------------------------------------------------
