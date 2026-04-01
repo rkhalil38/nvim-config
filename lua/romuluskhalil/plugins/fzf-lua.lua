@@ -17,4 +17,17 @@ vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
     vim.keymap.set("n", "<leader>fc", fzf.commands)
     vim.keymap.set("n", "<leader>gf", fzf.git_files)
     vim.keymap.set("n", "<leader>gb", fzf.git_branches)
+
+    fzf.setup({
+        previewers = {
+            builtin = {
+                extensions = {
+                    ["svg"] = { "chafa", "{file}" },
+                    ["png"] = { "chafa", "{file}" },
+                    ["jpg"] = { "chafa", "{file}" },
+                    ["jpeg"] = { "chafa", "{file}" },
+                }
+            }
+        }
+    })
 end })
