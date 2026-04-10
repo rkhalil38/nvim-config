@@ -9,6 +9,9 @@ vim.pack.add({
     "https://github.com/rcarriga/nvim-notify",
     "https://github.com/folke/noice.nvim",
     "https://github.com/MunifTanjim/nui.nvim",
+    "https://github.com/kylechui/nvim-surround",
+    "https://github.com/stevearc/oil.nvim",
+    "https://github.com/windwp/nvim-autopairs",
 })
 
 vim.cmd(":packadd nvim.undotree")
@@ -50,3 +53,22 @@ vim.notify = notify
 -- noice
 --------------------------------------------------
 require("noice").setup({})
+
+--------------------------------------------------
+-- nvim-surround
+--------------------------------------------------
+require("nvim-surround").setup({})
+
+--------------------------------------------------
+-- oil
+--------------------------------------------------
+require("oil").setup()
+
+vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
+    vim.keymap.set("n", "<leader>pv", "<CMD>Oil %:p:h<CR>")
+end })
+
+--------------------------------------------------
+-- nvim-autopairs
+--------------------------------------------------
+require("nvim-autopairs").setup()

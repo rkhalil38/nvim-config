@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
--- Pull Up Explore
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- Swap Windows
 vim.keymap.set("n", "<leader>sw", "<C-w>")
 
