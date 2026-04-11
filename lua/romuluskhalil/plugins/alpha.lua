@@ -48,7 +48,7 @@ dashboard.section.buttons.val = {
     dashboard.button(
         "s",
         "  > Settings",
-        ":cd " .. vim.fn.stdpath("config") .. " | Ex<CR>"
+        ":cd " .. vim.fn.stdpath("config") .. " | Oil<CR>"
     ),
     dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
 }
