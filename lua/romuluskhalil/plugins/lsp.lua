@@ -32,7 +32,8 @@ require("mason-lspconfig").setup({
     "clangd",
     "phpactor",
     "ruby_lsp",
-    "hyprls"
+    "hyprls",
+    "qmlls"
   },
 })
 
