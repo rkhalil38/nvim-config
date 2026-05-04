@@ -62,7 +62,13 @@ require("nvim-surround").setup({})
 --------------------------------------------------
 -- oil
 --------------------------------------------------
-require("oil").setup()
+require("oil").setup({
+    view_options = {
+        is_hidden_file = function(name, bufnr)
+            return name ~= ".." and vim.startswith(name, ".")
+        end,
+    }
+})
 
 vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
     vim.keymap.set("n", "<leader>pv", "<CMD>Oil %:p:h<CR>")
