@@ -10,11 +10,11 @@ vim.pack.add({
 --------------------------------------------------
 local fzf = require("fzf-lua")
 
-vim.keymap.set("n", "<leader>ff", fzf.files)
-vim.keymap.set("n", "<leader>fs", fzf.live_grep)
-vim.keymap.set("n", "<leader>fc", fzf.commands)
-vim.keymap.set("n", "<leader>gf", fzf.git_files)
-vim.keymap.set("n", "<leader>gb", fzf.git_branches)
+vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "Find file (fzf-lua)" })
+vim.keymap.set("n", "<leader>fs", fzf.live_grep, { desc = "Find string (fzf-lua)" })
+vim.keymap.set("n", "<leader>fc", fzf.commands, { desc = "Find command (fzf-lua)" })
+vim.keymap.set("n", "<leader>gf", fzf.git_files, { desc = "Find git file (fzf-lua)" })
+vim.keymap.set("n", "<leader>gb", fzf.git_branches, { desc = "Find git branch (fzf-lua)" })
 
 fzf.setup({
     previewers = {

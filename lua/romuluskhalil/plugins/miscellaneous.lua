@@ -12,6 +12,7 @@ vim.pack.add({
     "https://github.com/kylechui/nvim-surround",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/windwp/nvim-autopairs",
+    "https://github.com/folke/which-key.nvim",
 })
 
 vim.cmd(":packadd nvim.undotree")
@@ -19,7 +20,7 @@ vim.cmd(":packadd nvim.undotree")
 --------------------------------------------------
 -- markdown-preview.nvim
 --------------------------------------------------
-local mkdp_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/markdown-preview.nvim"
+local mkdp_path = vim.fn.stdpath("data") .. "/site/pack/core/opt/markdown-preview.nvim"
 
 if vim.fn.isdirectory(mkdp_path) == 1 then
     if vim.fn.executable("npx") == 1 then
@@ -32,6 +33,8 @@ if vim.fn.isdirectory(mkdp_path) == 1 then
         vim.fn["mkdp#util#install"]()
     end
 end
+
+vim.keymap.set("n", "<leader>mp", vim.cmd.MarkdownPreview, { desc = "Markdown Preview (markdown-preview) "})
 
 --------------------------------------------------
 -- lualine
@@ -71,9 +74,14 @@ oil.setup({
     }
 })
 
-vim.keymap.set("n", "<leader>pv", oil.open)
+vim.keymap.set("n", "<leader>pv", oil.open, { desc = "Open cur dir (oil)" })
 
 --------------------------------------------------
 -- nvim-autopairs
 --------------------------------------------------
 require("nvim-autopairs").setup()
+
+--------------------------------------------------
+-- which-key
+--------------------------------------------------
+require("which-key").setup()

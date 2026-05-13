@@ -7,4 +7,4 @@ vim.pack.add({
 --------------------------------------------------
 local grug = require("grug-far")
 
-vim.keymap.set("n", "<leader>fr", grug.open)
+vim.keymap.set("n", "<leader>fr", grug.open, { desc = "Find & Replace (grug-far)" })

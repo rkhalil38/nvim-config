@@ -30,10 +30,10 @@ dap.configurations.php = {
     }
 }
 
-vim.keymap.set("n", "<leader>bp", dap.toggle_breakpoint)
-vim.keymap.set("n", "<leader>dc", dap.continue)
-vim.keymap.set("n", "<leader>so", dap.step_over)
-vim.keymap.set("n", "<leader>si", dap.step_into)
+vim.keymap.set("n", "<leader>bp", dap.toggle_breakpoint, { desc = "Toggle breakpoint (nvim-dap)" })
+vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Debug continue (nvim-dap)" })
+vim.keymap.set("n", "<leader>so", dap.step_over, { desc = "Step over (nvim-dap)" })
+vim.keymap.set("n", "<leader>si", dap.step_into, { desc = "Step into (nvim-dap)" })
 
 -----------------------------------------------
 -- nvim-dap-ui 
@@ -41,4 +41,4 @@ vim.keymap.set("n", "<leader>si", dap.step_into)
 local dapui = require("dapui")
 dapui.setup()
 
-vim.keymap.set("n", "<leader>dv", dapui.toggle)
+vim.keymap.set("n", "<leader>dv", dapui.toggle, { desc = "UI toggle (nvim-dap)" })
