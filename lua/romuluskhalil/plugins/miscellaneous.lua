@@ -62,7 +62,8 @@ require("nvim-surround").setup({})
 --------------------------------------------------
 -- oil
 --------------------------------------------------
-require("oil").setup({
+local oil = require("oil")
+oil.setup({
     view_options = {
         is_hidden_file = function(name, bufnr)
             return name ~= ".." and vim.startswith(name, ".")
@@ -70,9 +71,7 @@ require("oil").setup({
     }
 })
 
-vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
-    vim.keymap.set("n", "<leader>pv", "<CMD>Oil %:p:h<CR>")
-end })
+vim.keymap.set("n", "<leader>pv", oil.open)
 
 --------------------------------------------------
 -- nvim-autopairs

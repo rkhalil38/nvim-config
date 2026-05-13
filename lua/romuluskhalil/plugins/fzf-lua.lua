@@ -10,24 +10,21 @@ vim.pack.add({
 --------------------------------------------------
 local fzf = require("fzf-lua")
 
--- configure on vim enter since plugin might not be loaded
-vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
-    vim.keymap.set("n", "<leader>ff", fzf.files)
-    vim.keymap.set("n", "<leader>fs", fzf.live_grep)
-    vim.keymap.set("n", "<leader>fc", fzf.commands)
-    vim.keymap.set("n", "<leader>gf", fzf.git_files)
-    vim.keymap.set("n", "<leader>gb", fzf.git_branches)
+vim.keymap.set("n", "<leader>ff", fzf.files)
+vim.keymap.set("n", "<leader>fs", fzf.live_grep)
+vim.keymap.set("n", "<leader>fc", fzf.commands)
+vim.keymap.set("n", "<leader>gf", fzf.git_files)
+vim.keymap.set("n", "<leader>gb", fzf.git_branches)
 
-    fzf.setup({
-        previewers = {
-            builtin = {
-                extensions = {
-                    ["svg"] = { "chafa", "{file}" },
-                    ["png"] = { "chafa", "{file}" },
-                    ["jpg"] = { "chafa", "{file}" },
-                    ["jpeg"] = { "chafa", "{file}" },
-                }
+fzf.setup({
+    previewers = {
+        builtin = {
+            extensions = {
+                ["svg"] = { "chafa", "{file}" },
+                ["png"] = { "chafa", "{file}" },
+                ["jpg"] = { "chafa", "{file}" },
+                ["jpeg"] = { "chafa", "{file}" },
             }
         }
-    })
-end })
+    }
+})

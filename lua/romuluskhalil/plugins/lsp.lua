@@ -127,7 +127,5 @@ vim.lsp.config('lua_ls', {
 --------------------------------------------------
 -- lsp bindings
 --------------------------------------------------
-vim.api.nvim_create_autocmd('VimEnter', { callback = function ()
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-end })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
