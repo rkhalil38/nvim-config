@@ -3,8 +3,8 @@ vim.pack.add({
     "https://github.com/goolord/alpha-nvim",
 })
 
-local alpha = require('alpha')
-local dashboard = require('alpha.themes.dashboard')
+local alpha = require("alpha")
+local dashboard = require("alpha.themes.dashboard")
 
 dashboard.section.header.val = {
     "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
@@ -37,20 +37,16 @@ dashboard.section.header.val = {
     "⠀⠀⠀⠀⠀⣠⣶⣶⣅⣠⣶⠀⠒⠟⢁⡴⠋⠀⠀⠀⢹⣿⣿⡋⣧⢸⡇⡏⣀⣀⠀⠙⣿⣉⠙⢤⡄⠀⠀⠀",
     "⠀⠀⣠⣴⣺⢿⣿⣿⡛⠛⠿⠿⣯⣷⡲⣶⣟⣻⡀⠀⣠⣿⣿⣖⣸⣨⣿⠿⠛⣻⣿⣶⣾⣾⠇⠀⠻⣄⠀⠀",
     "⠀⣾⢟⠿⠿⢶⣮⡙⢏⢢⡀⢠⡌⣿⣿⡿⠟⡿⢳⣼⣿⣿⣿⣾⣿⣧⣤⣤⣤⣿⣿⣭⣿⠁⠀⠀⣀⣈⣧⠀",
-    "⢺⣥⢿⠾⠿⠿⠿⡿⠚⢋⣠⠯⣿⢉⢉⠻⠾⠛⢿⣿⠻⠿⢛⢋⣤⣯⣭⠽⠶⣾⣻⢿⣻⢿⠶⢛⣻⡿⢽⠄"
+    "⢺⣥⢿⠾⠿⠿⠿⡿⠚⢋⣠⠯⣿⢉⢉⠻⠾⠛⢿⣿⠻⠿⢛⢋⣤⣯⣭⠽⠶⣾⣻⢿⣻⢿⠶⢛⣻⡿⢽⠄",
 }
 
 -- Set menu
 dashboard.section.buttons.val = {
-    dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
-    dashboard.button( "f", "  > Find file", ":cd $HOME/ | FzfLua files<CR>"),
-    dashboard.button( "r", "  > Recent"   , ":FzfLua oldfiles<CR>"),
-    dashboard.button(
-        "s",
-        "  > Settings",
-        ":cd " .. vim.fn.stdpath("config") .. " | Oil<CR>"
-    ),
-    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
+    dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("f", "  > Find file", ":cd $HOME/ | FzfLua files<CR>"),
+    dashboard.button("r", "  > Recent", ":FzfLua oldfiles<CR>"),
+    dashboard.button("s", "  > Settings", ":cd " .. vim.fn.stdpath("config") .. " | Oil<CR>"),
+    dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
 }
 
 dashboard.section.footer.val = "plin plin plon - Hidetaka Miyazaki"
@@ -60,7 +56,7 @@ alpha.setup(dashboard.opts)
 
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "alpha",
-    callback = function ()
+    callback = function()
         vim.opt_local.foldenable = false
-    end
+    end,
 })

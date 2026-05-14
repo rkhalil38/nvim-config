@@ -25,7 +25,7 @@ fzf.setup({
                 ["png"] = { "chafa", "{file}" },
                 ["jpg"] = { "chafa", "{file}" },
                 ["jpeg"] = { "chafa", "{file}" },
-            }
-        }
-    }
+            },
+        },
+    },
 })

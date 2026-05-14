@@ -34,7 +34,7 @@ if vim.fn.isdirectory(mkdp_path) == 1 then
     end
 end
 
-vim.keymap.set("n", "<leader>mp", vim.cmd.MarkdownPreview, { desc = "Markdown Preview (markdown-preview) "})
+vim.keymap.set("n", "<leader>mp", vim.cmd.MarkdownPreview, { desc = "Markdown Preview (markdown-preview) " })
 
 --------------------------------------------------
 -- lualine
@@ -71,7 +71,7 @@ oil.setup({
         is_hidden_file = function(name, bufnr)
             return name ~= ".." and vim.startswith(name, ".")
         end,
-    }
+    },
 })
 
 vim.keymap.set("n", "<leader>pv", oil.open, { desc = "Open cur dir (oil)" })
