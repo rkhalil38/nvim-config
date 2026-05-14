@@ -43,6 +43,21 @@ require("lualine").setup({
     options = {
         theme = "auto",
     },
+    sections = {
+        lualine_x = {
+            "encoding",
+            "fileformat",
+            function()
+                local wc = vim.fn.wordcount()
+                if vim.fn.mode() == "v" or vim.fn.mode() == "V" or vim.fn.mode() == "CTRL-V" then
+                    return wc["visual_words"] or 0
+                else
+                    return wc["words"]
+                end
+            end,
+            "filetype",
+        },
+    },
 })
 
 --------------------------------------------------
