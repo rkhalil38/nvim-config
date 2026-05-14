@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 -- Leave Normal Command
 vim.keymap.set("i", "jj", "<Esc>", { desc = "Leave normal mode" })
 

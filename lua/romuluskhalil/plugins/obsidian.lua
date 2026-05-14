@@ -33,4 +33,7 @@ require("obsidian").setup({
 	    },
 	},
 })
+
+-- required by obsidian.nvim
+vim.opt.conceallevel = 1
 --]]
