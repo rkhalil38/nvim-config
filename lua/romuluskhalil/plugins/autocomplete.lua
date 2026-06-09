@@ -8,6 +8,7 @@ vim.pack.add({
     "https://github.com/rafamadriz/friendly-snippets",
     "https://github.com/hrsh7th/nvim-cmp",
     "https://github.com/saadparwaiz1/cmp_luasnip",
+    "https://github.com/zbirenbaum/copilot-cmp",
 })
 
 -----------------------------------------------
@@ -35,6 +36,11 @@ require("nvim-treesitter").setup({
 -- LuaSnip
 -----------------------------------------------
 require("luasnip.loaders.from_vscode").lazy_load()
+
+-----------------------------------------------
+-- copilot-cmp
+-----------------------------------------------
+require("copilot_cmp").setup()
 
 -----------------------------------------------
 -- nvim-cmp
@@ -70,7 +76,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = "luasnip" }, -- For luasnip users.
         { name = "nvim_lsp" },
-        { name = "codeium" },
+        { name = "copilot" },
         { name = "treesitter" },
         { name = "path" },
         { name = "buffer" },
