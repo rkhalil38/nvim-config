@@ -29,3 +29,6 @@ fzf.setup({
         },
     },
 })
+
+-- make fzf the default UI for vim.ui.select
+fzf.register_ui_select()
