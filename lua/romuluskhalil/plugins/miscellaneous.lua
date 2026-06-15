@@ -44,6 +44,9 @@ require("lualine").setup({
         theme = "auto",
     },
     sections = {
+        lualine_c = {
+            { "filename", path = 1 },
+        },
         lualine_x = {
             "encoding",
             "fileformat",
