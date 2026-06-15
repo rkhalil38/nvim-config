@@ -88,6 +88,9 @@ oil.setup({
             return name ~= ".." and vim.startswith(name, ".")
         end,
     },
+    win_options = {
+        winbar = "%{v:lua.require('oil').get_current_dir()}",
+    },
 })
 
 vim.keymap.set("n", "<leader>pv", oil.open, { desc = "Open cur dir (oil)" })
