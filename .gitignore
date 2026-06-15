@@ -1,11 +1,5 @@
-# Lazy Package Versions
-lazy-lock.json
-
 # Node Modules
 node_modules/ 
-
-# Node Dependency Lock File
-package-lock.json
 
 # Logs
 *.log
