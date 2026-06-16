@@ -10,6 +10,11 @@ vim.pack.add({
 local dap = require("dap")
 local config_dir = vim.fn.stdpath("config")
 
+----------- IMPORTANT -----------
+-- configurations should only be
+-- added on a per DE basis
+---------------------------------
+
 -- php debugger
 dap.adapters.php = {
     type = "executable",
@@ -17,17 +22,15 @@ dap.adapters.php = {
     args = { config_dir .. "/vscode-php-debug/out/phpDebug.js" },
 }
 
-dap.configurations.php = {
-    {
-        type = "php",
-        request = "launch",
-        name = "Listen for Xdebug",
-        port = 9003,
-        pathMappings = {
-            ["/app"] = "${workspaceFolder}",
-        },
-        log = true,
-    },
+-- javascript debugger
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = {vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}"},
+  }
 }
 
 vim.keymap.set("n", "<leader>bp", dap.toggle_breakpoint, { desc = "Toggle breakpoint (nvim-dap)" })
