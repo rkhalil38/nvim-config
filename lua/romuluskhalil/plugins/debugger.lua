@@ -8,7 +8,7 @@ vim.pack.add({
 -- nvim-dap
 -----------------------------------------------
 local dap = require("dap")
-local config_dir = vim.fn.stdpath("config")
+local pkg_dir = vim.fn.stdpath("data") .. "/mason/packages"
 
 ----------- IMPORTANT -----------
 -- configurations should only be
@@ -19,18 +19,18 @@ local config_dir = vim.fn.stdpath("config")
 dap.adapters.php = {
     type = "executable",
     command = "node",
-    args = { config_dir .. "/vscode-php-debug/out/phpDebug.js" },
+    args = { pkg_dir .. "/php-debug-adapter/extension/out/phpDebug.js" },
 }
 
 -- javascript debugger
 dap.adapters["pwa-node"] = {
-  type = "server",
-  host = "localhost",
-  port = "${port}",
-  executable = {
-    command = "node",
-    args = {vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}"},
-  }
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+        command = "node",
+        args = { pkg_dir .. "/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}" },
+    },
 }
 
 vim.keymap.set("n", "<leader>bp", dap.toggle_breakpoint, { desc = "Toggle breakpoint (nvim-dap)" })
