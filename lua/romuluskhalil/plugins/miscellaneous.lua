@@ -116,10 +116,10 @@ local conform = require("conform")
 conform.setup({
     formatters_by_ft = {
         lua = { "stylua" },
-        javascript = { "prettier" },
-        javascriptreact = { "prettier" },
-        typescript = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascript = { "prettier", "npx prettier", stop_after_first = true },
+        javascriptreact = { "prettier", "npx prettier", stop_after_first = true },
+        typescript = { "prettier", "npx prettier", stop_after_first = true },
+        typescriptreact = { "prettier", "npx prettier", stop_after_first = true },
     },
 })
 
