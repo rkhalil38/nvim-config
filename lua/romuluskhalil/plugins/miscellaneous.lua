@@ -13,6 +13,7 @@ vim.pack.add({
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/windwp/nvim-autopairs",
     "https://github.com/folke/which-key.nvim",
+    "https://github.com/stevearc/conform.nvim",
 })
 
 vim.cmd(":packadd nvim.undotree")
@@ -107,3 +108,19 @@ require("nvim-autopairs").setup()
 -- which-key
 --------------------------------------------------
 require("which-key").setup()
+
+--------------------------------------------------
+-- conform
+--------------------------------------------------
+local conform = require("conform")
+conform.setup({
+    formatters_by_ft = {
+        lua = { "stylua" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+    },
+})
+
+vim.keymap.set("n", "<leader>bf", conform.format, { desc = "Format file (conform)" })
