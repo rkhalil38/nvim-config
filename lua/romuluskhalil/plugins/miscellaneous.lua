@@ -12,6 +12,7 @@ vim.pack.add({
     "https://github.com/kylechui/nvim-surround",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/windwp/nvim-autopairs",
+    "https://github.com/windwp/nvim-ts-autotag",
     "https://github.com/folke/which-key.nvim",
     "https://github.com/stevearc/conform.nvim",
 })
@@ -103,6 +104,11 @@ vim.keymap.set("n", "<leader>pv", oil.open, { desc = "Open cur dir (oil)" })
 -- nvim-autopairs
 --------------------------------------------------
 require("nvim-autopairs").setup()
+
+--------------------------------------------------
+-- nvim-ts-autotag
+--------------------------------------------------
+require("nvim-ts-autotag").setup()
 
 --------------------------------------------------
 -- which-key

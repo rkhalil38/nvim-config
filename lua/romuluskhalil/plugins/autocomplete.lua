@@ -28,6 +28,7 @@ require("nvim-treesitter").setup({
         "query",
         "markdown",
         "markdown_inline",
+        "html",
     },
 })
 
