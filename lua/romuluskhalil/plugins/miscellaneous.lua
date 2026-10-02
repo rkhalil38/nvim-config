@@ -126,6 +126,7 @@ conform.setup({
         javascriptreact = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        astro = { "prettier" },
     },
 })
 
