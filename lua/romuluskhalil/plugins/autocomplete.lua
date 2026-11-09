@@ -37,6 +37,13 @@ require("nvim-treesitter").setup({
 -----------------------------------------------
 require("luasnip.loaders.from_vscode").lazy_load()
 
+local ls = require("luasnip")
+local s, i, fmta = ls.snippet, ls.insert_node, require("luasnip.extras.fmt").fmta
+
+ls.add_snippets("tex", {
+    s({ trig = "ttt", desc = "\\texttt{}" }, fmta("\\texttt{<>}<>", { i(1), i(0) })),
+})
+
 -----------------------------------------------
 -- nvim-cmp
 -----------------------------------------------
