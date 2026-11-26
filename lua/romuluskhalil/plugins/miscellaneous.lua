@@ -54,7 +54,7 @@ require("lualine").setup({
             "fileformat",
             function()
                 local wc = vim.fn.wordcount()
-                if vim.fn.mode() == "v" or vim.fn.mode() == "V" or vim.fn.mode() == "CTRL-V" then
+                if vim.fn.mode() == "v" or vim.fn.mode() == "V" or vim.fn.mode() == "\22" then
                     return wc["visual_words"] or 0
                 else
                     return wc["words"]
@@ -127,6 +127,8 @@ conform.setup({
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
         astro = { "prettier" },
+        c = { "clang-format" },
+        cpp = { "clang-format" },
     },
 })
 
